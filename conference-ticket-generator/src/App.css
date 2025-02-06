@@ -1,7 +1,6 @@
 #root {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
@@ -25,8 +24,6 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: 1em;
-
   h2 {
     font-size: 30px;
     font-weight: 600;

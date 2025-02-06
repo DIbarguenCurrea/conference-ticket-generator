@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { InboxOutlined } from "@ant-design/icons";
-import { message, Upload } from "antd";
+import { CloudUploadOutlined, InfoCircleOutlined } from "@ant-design/icons";
+import { Button, message, Upload } from "antd";
 
 const { Dragger } = Upload;
 
@@ -56,37 +56,55 @@ function UploadFile() {
 
   return (
     <div>
-      <div style={{ width: "600px" }}>
+      <div style={{ width: "600px", padding: "10px" }}>
         {!file ? (
-          <Dragger {...uploadProps}>
-            <p className="ant-upload-drag-icon">
-              <InboxOutlined style={{ fontSize: "48px", color: "#1890ff" }} />
-            </p>
-            <div className="drag-text">
-              <p>Haz click o arrastra un archivo para subirlo</p>
-              <p>Solo se permiten imágenes</p>
+          <>
+            <h4 style={{ display: "flex", alignItems: "start" }}>
+              Upload Avatar
+            </h4>
+            <Dragger {...uploadProps}>
+              <p className="ant-upload-drag-icon">
+                <CloudUploadOutlined
+                  style={{ fontSize: "48px", color: "#1890ff" }}
+                />
+              </p>
+              <div className="drag-text">
+                <p>Click or drag an image of yourself.</p>
+              </div>
+            </Dragger>
+            <div style={{ display: "flex", gap: "10px" }}>
+              <InfoCircleOutlined />
+              <p>Only images are allowed.</p>
             </div>
-          </Dragger>
+          </>
         ) : (
-          <div style={{ marginTop: "20px" }}>
-            <p>Vista previa:</p>
+          <div
+            style={{
+              marginTop: "20px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "10px",
+            }}
+          >
+            <p>Preview:</p>
             <img
               src={file}
               alt="preview"
               style={{ width: "200px", borderRadius: "8px" }}
             />
+            <Button
+              type="primary"
+              onClick={() => {
+                setFile(null);
+                localStorage.removeItem("uploadedImage");
+              }}
+            >
+              Change imagen
+            </Button>
           </div>
         )}
       </div>
-
-      <button
-        onClick={() => {
-          setFile(null);
-          localStorage.removeItem("uploadedImage");
-        }}
-      >
-        Eliminar imagen
-      </button>
     </div>
   );
 }

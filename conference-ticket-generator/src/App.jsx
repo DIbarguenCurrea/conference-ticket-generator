@@ -1,3 +1,4 @@
+import { Select, Space } from "antd";
 import "./App.css";
 import FormDesktop from "./components/formGeneratorDesktop/FormDesktop";
 
@@ -24,7 +25,42 @@ function App() {
           <h2>
             You can generate your entrance ticket to your favorite place here!
           </h2>
-          <p>Choose the type of ticket and fill out the form to generate it.</p>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "10px",
+            }}
+          >
+            <p>
+              Choose the type of ticket and fill out the form to generate it.
+            </p>
+            <Space>
+              <Select
+                defaultValue="Conference"
+                style={{
+                  width: 120,
+                  border: "none",
+                }}
+                // onChange={handleChange}
+                options={[
+                  {
+                    value: "Conference",
+                    label: "Conference",
+                  },
+                  {
+                    value: "Concert",
+                    label: "Concert",
+                  },
+                  {
+                    value: "Soccer",
+                    label: "Soccer",
+                  },
+                ]}
+              />
+            </Space>
+          </div>
         </div>
         <div>
           <FormDesktop />
