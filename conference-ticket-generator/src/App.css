@@ -35,3 +35,9 @@
   flex-direction: column;
   color: white;
 }
+
+.ant-form-item-label > label {
+  color: white !important;
+  font-family: "Inconsolata", monospace !important;
+  font-weight: 600 !important;
+}
