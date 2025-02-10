@@ -15,7 +15,7 @@ function UploadFile() {
     }
   }, []);
 
-  // Guardar imagen en el localStorage
+  // Guardar la imagen en el localStorage
   const handleChange = (info) => {
     const { status, originFileObj } = info.file;
 
@@ -56,7 +56,7 @@ function UploadFile() {
 
   return (
     <div>
-      <div style={{ width: "600px", padding: "10px" }}>
+      <div style={{ width: "550px", padding: "10px" }}>
         {!file ? (
           <>
             <h4 style={{ display: "flex", alignItems: "start" }}>

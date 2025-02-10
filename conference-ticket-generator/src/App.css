@@ -24,10 +24,66 @@
 .content {
   display: flex;
   flex-direction: column;
+  gap: 0.5em;
   h2 {
     font-size: 30px;
     font-weight: 600;
   }
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+.svg-circle1 {
+  position: absolute;
+  top: -80px;
+  left: 40px;
+  width: 250px;
+  height: 250px;
+  /* z-index: 1000; Asegura que esté sobre otros elementos */
+}
+
+.svg-circle2 {
+  position: absolute;
+  top: 300px;
+  right: 280px;
+  width: 250px;
+  height: 250px;
+  /* z-index: 1000; Asegura que esté sobre otros elementos */
+}
+
+.svg-lines {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* z-index: 1000; Se mantiene sobre otros elementos */
+}
+
+.svg-SquigglyLineTop {
+  position: absolute;
+  top: -120px;
+  right: 150px;
+  width: 450px;
+  height: 450px;
+  /* z-index: 1000; Asegura que esté sobre otros elementos */
+}
+
+.svg-SquigglyLineBottom {
+  position: absolute;
+  top: 340px;
+  left: -20px;
+  width: 750px;
+  height: 350px;
+  /* z-index: 1000; Asegura que esté sobre otros elementos */
+}
+
+.formDesktop {
+  position: relative;
+  z-index: 1000;
 }
 
 .drag-text {
