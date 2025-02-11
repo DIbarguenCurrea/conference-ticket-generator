@@ -1,7 +1,17 @@
-import { Button, Form, Input, Select, Space } from "antd";
+import { Button, Form, Input } from "antd";
+import { useDispatch, useSelector } from "react-redux";
 import UploadFile from "../uploadFile/UploadFile";
+import { setFullName, setEmail, setTypeTicket } from "../../redux/formSlice";
 
 function FormDesktop() {
+  const dispatch = useDispatch();
+
+  const { fullName, email, typeTicket } = useSelector((state) => state.form);
+
+  const handleTicket = (ticketType) => {
+    dispatch(setTypeTicket(ticketType));
+  };
+
   return (
     <div className="formDesktop">
       <UploadFile />
@@ -17,25 +27,33 @@ function FormDesktop() {
       >
         <Form.Item
           label="Full Name"
-          name="vertical"
+          name="full name"
           rules={[
             {
               required: true,
             },
           ]}
         >
-          <Input style={{ width: "550px" }} />
+          <Input
+            style={{ width: "550px" }}
+            value={fullName}
+            onChange={(e) => dispatch(setFullName(e.target.value))}
+          />
         </Form.Item>
         <Form.Item
           label="Email"
-          name="vertical"
+          name="email"
           rules={[
             {
               required: true,
             },
           ]}
         >
-          <Input style={{ width: "550px" }} />
+          <Input
+            style={{ width: "550px" }}
+            value={email}
+            onChange={(e) => dispatch(setEmail(e.target.value))}
+          />
         </Form.Item>
         <div
           style={{
@@ -48,35 +66,22 @@ function FormDesktop() {
           <p style={{ color: "white", fontWeight: "600" }}>
             Choose type ticket:
           </p>
-          <Space>
-            <Select
-              defaultValue="Conference"
-              style={{
-                width: 120,
-                border: "none",
-              }}
-              options={[
-                {
-                  value: "Conference",
-                  label: "Conference",
-                },
-                {
-                  value: "Concert",
-                  label: "Concert",
-                },
-                {
-                  value: "Soccer",
-                  label: "Soccer",
-                },
-              ]}
-            />
-          </Space>
+          {["Conference", "Concert", "Soccer"].map((type) => (
+            <Button
+              key={type}
+              type={typeTicket === type ? "primary" : "default"}
+              onClick={() => handleTicket(type)}
+            >
+              {type}
+            </Button>
+          ))}
         </div>
       </Form>
       <Button
         type="primary"
         style={{
           marginTop: "20px",
+          width: "100%",
         }}
       >
         Generate Ticket

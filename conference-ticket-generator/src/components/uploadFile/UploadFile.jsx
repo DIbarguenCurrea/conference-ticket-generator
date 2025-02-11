@@ -69,12 +69,12 @@ function UploadFile() {
                 />
               </p>
               <div className="drag-text">
-                <p>Click or drag an image of yourself.</p>
+                <p>Drag and drop or click to upload.</p>
               </div>
             </Dragger>
             <div style={{ display: "flex", gap: "10px" }}>
               <InfoCircleOutlined />
-              <p>Only images are allowed.</p>
+              <p>Upload your photo (JPG or PNG, max size: 500KB).</p>
             </div>
           </>
         ) : (
