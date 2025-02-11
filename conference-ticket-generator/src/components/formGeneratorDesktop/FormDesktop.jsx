@@ -27,7 +27,7 @@ function FormDesktop() {
       >
         <Form.Item
           label="Full Name"
-          name="full name"
+          name="Name"
           rules={[
             {
               required: true,
@@ -42,7 +42,7 @@ function FormDesktop() {
         </Form.Item>
         <Form.Item
           label="Email"
-          name="email"
+          name="Email"
           rules={[
             {
               required: true,

@@ -19,13 +19,13 @@ function UploadFile() {
   const handleChange = (info) => {
     const { status, originFileObj } = info.file;
 
-    if (status === "done" || status == "uploading") {
+    if (status === "done") {
       const reader = new FileReader();
       reader.onload = () => {
         const imageUrl = reader.result;
         setFile(imageUrl);
         localStorage.setItem("uploadedImage", imageUrl); // Guarda la imagen en el localStorage
-        message.success("guardado correctamente.");
+        message.success("Guardado correctamente.");
       };
       reader.readAsDataURL(originFileObj);
     } else if (status === "error") {
@@ -37,7 +37,7 @@ function UploadFile() {
     name: "file",
     multiple: false,
     showUploadList: false,
-    customRequest: ({ file, onSuccess }) => {
+    customRequest: ({ onSuccess }) => {
       // Simulamos una subida exitosa inmediata
       setTimeout(() => {
         onSuccess("ok");
