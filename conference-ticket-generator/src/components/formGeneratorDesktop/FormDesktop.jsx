@@ -1,12 +1,15 @@
-import { Button, Form, Input } from "antd";
-import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import { Button, Form, Input, Modal } from "antd";
 import UploadFile from "../uploadFile/UploadFile";
+import { useDispatch, useSelector } from "react-redux";
+import TicketGenerator from "../ticketGenerator/TicketGenerator";
 import { setFullName, setEmail, setTypeTicket } from "../../redux/formSlice";
 
 function FormDesktop() {
   const dispatch = useDispatch();
 
   const { fullName, email, typeTicket } = useSelector((state) => state.form);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleTicket = (ticketType) => {
     dispatch(setTypeTicket(ticketType));
@@ -83,9 +86,23 @@ function FormDesktop() {
           marginTop: "20px",
           width: "100%",
         }}
+        onClick={() => setIsModalOpen(true)}
       >
         Generate Ticket
       </Button>
+      <Modal
+        open={isModalOpen}
+        onCancel={() => setIsModalOpen(false)}
+        width="90vw"
+        style={{
+          top: "2vh",
+        }}
+        className="custom-modal"
+        cancelButtonProps={{ style: { display: "none" } }}
+        okButtonProps={{ style: { display: "none" } }}
+      >
+        <TicketGenerator />
+      </Modal>
     </div>
   );
 }

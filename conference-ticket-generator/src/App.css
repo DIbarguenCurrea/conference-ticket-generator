@@ -101,3 +101,29 @@ p {
   font-family: "Inconsolata", monospace !important;
   font-weight: 600 !important;
 }
+
+.custom-modal .ant-modal-content {
+  font-family: "Inconsolata", monospace;
+  background-image: url("../assets/images/background-desktop.png");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  border: 3px solid white;
+  border-radius: 10px;
+}
+
+.custom-modal .ant-modal-close {
+  color: white;
+  font-size: 20px;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    #ff6a00,
+    #ee0979
+  ); /* Colores del gradiente */
+  -webkit-background-clip: text; /* Aplica el fondo SOLO al texto */
+  -webkit-text-fill-color: transparent; /* Hace el texto visible con el gradiente */
+  display: inline-block;
+}

@@ -4,6 +4,10 @@
   font-family: "Inconsolata", monospace;
   line-height: 1.5;
   font-weight: 400;
+  background-image: url("../assets/images/background-desktop.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 body {
@@ -17,9 +21,5 @@ body {
 @media (prefers-color-scheme: light) {
   :root {
     color: white;
-    background-image: url("../assets/images/background-desktop.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
   }
 }
