@@ -30,8 +30,33 @@
   gap: 0.5em;
   z-index: 1000;
   h2 {
-    font-size: 30px;
+    font-size: 35px;
     font-weight: 600;
+  }
+  p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 400;
+  }
+}
+
+.content-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  z-index: 1000;
+  h2 {
+    font-size: 50px;
+    font-weight: 600;
+  }
+  p {
+    display: flex;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    padding-left: 10vh;
   }
 }
 
@@ -126,4 +151,87 @@ p {
   -webkit-background-clip: text; /* Aplica el fondo SOLO al texto */
   -webkit-text-fill-color: transparent; /* Hace el texto visible con el gradiente */
   display: inline-block;
+}
+
+.ticket-container {
+  position: relative;
+  width: 500px;
+  padding-top: 30px;
+}
+
+.ticket-svg {
+  width: 100%;
+  display: block;
+}
+
+.ticket-content {
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  color: white;
+  padding-top: 10vh;
+}
+
+.ticket-header {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  font-size: 22px;
+  gap: 6px;
+}
+
+.ticket-message {
+  display: flex;
+  padding-left: 6vh;
+}
+
+.logo {
+  width: 35px;
+}
+
+.ticket-body {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  padding-top: 7vh;
+  gap: 1em;
+  align-items: center;
+}
+
+.ticket-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-image {
+  width: 90px;
+  height: 90px;
+  border-radius: 8%;
+  object-fit: cover;
+  border: 1px solid white;
+}
+
+.user-name {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+.user-email {
+  font-size: 14px;
+  opacity: 0.8;
+  margin: 0;
+}
+
+.ticket-number {
+  position: absolute;
+  top: 60%;
+  right: -25%;
+  transform: translate(-50%, -50%) rotate(-270deg); /* Rotamos 90 grados */
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
 }

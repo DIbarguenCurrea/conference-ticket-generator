@@ -14,7 +14,7 @@ function TicketGenerator() {
           <img src={LogoMark} />
           <h1>Ticket Generator</h1>
         </div>
-        <div className="content">
+        <div className="content-form">
           <h2>
             Congrats, <span className="gradient-text">{fullName}</span>! <br />{" "}
             Your ticket is ready.

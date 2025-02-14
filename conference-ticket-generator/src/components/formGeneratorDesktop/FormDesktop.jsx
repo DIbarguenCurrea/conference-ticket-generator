@@ -41,6 +41,7 @@ function FormDesktop() {
             style={{ width: "550px" }}
             value={fullName}
             onChange={(e) => dispatch(setFullName(e.target.value))}
+            placeholder="John Doe"
           />
         </Form.Item>
         <Form.Item
@@ -56,6 +57,7 @@ function FormDesktop() {
             style={{ width: "550px" }}
             value={email}
             onChange={(e) => dispatch(setEmail(e.target.value))}
+            placeholder="email@example.com"
           />
         </Form.Item>
         <div
@@ -93,9 +95,9 @@ function FormDesktop() {
       <Modal
         open={isModalOpen}
         onCancel={() => setIsModalOpen(false)}
-        width="90vw"
+        width="95vw"
         style={{
-          top: "2vh",
+          top: "6vh",
         }}
         className="custom-modal"
         cancelButtonProps={{ style: { display: "none" } }}
