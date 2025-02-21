@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Button, Form, Input, Modal } from "antd";
+import { useEffect, useState } from "react";
+import { Button, Form, Input, message, Modal } from "antd";
 import UploadFile from "../uploadFile/UploadFile";
 import { useDispatch, useSelector } from "react-redux";
 import TicketGenerator from "../ticketGenerator/TicketGenerator";
@@ -10,6 +10,30 @@ function FormDesktop() {
 
   const { fullName, email, typeTicket } = useSelector((state) => state.form);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isFormValid, setIsFormValid] = useState(false);
+
+  // Verificamos si hay una imagen cargada en el localStorage
+  const checkPhotoUploaded = () => !!localStorage.getItem("uploadedImage");
+
+  // Validación para el formulario
+  useEffect(() => {
+    const formComplete =
+      fullName.trim() !== "" &&
+      email.trim() !== "" &&
+      typeTicket !== "" &&
+      checkPhotoUploaded();
+
+    setIsFormValid(formComplete);
+  }, [fullName, email, typeTicket]);
+
+  // Incluimos el openModal en el handle para que se use en el onClick del Button
+  const handleGenerateTicket = () => {
+    if (isFormValid) {
+      setIsModalOpen(true);
+    } else {
+      message.warning("Please complete all fields and upload a photo 📸");
+    }
+  };
 
   const handleTicket = (ticketType) => {
     dispatch(setTypeTicket(ticketType));
@@ -88,7 +112,7 @@ function FormDesktop() {
           marginTop: "20px",
           width: "100%",
         }}
-        onClick={() => setIsModalOpen(true)}
+        onClick={handleGenerateTicket}
       >
         Generate Ticket
       </Button>
