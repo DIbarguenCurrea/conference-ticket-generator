@@ -235,3 +235,40 @@ p {
   margin: 10px 0;
   white-space: nowrap; /* Evita que el texto se divida en varias líneas */
 }
+
+@media (max-width: 768px) {
+  #root {
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+  .header {
+    h1 {
+      font-size: 35px;
+    }
+  }
+  .content {
+    padding-top: 20px;
+    padding: 4px;
+    h2 {
+      font-size: 25px;
+      text-align: center;
+    }
+    p {
+      font-size: 16px;
+      text-align: center;
+    }
+  }
+  .svg-circle1,
+  .svg-circle2,
+  .svg-lines,
+  .svg-SquigglyLineTop,
+  .svg-SquigglyLineBottom {
+    display: none;
+  }
+}

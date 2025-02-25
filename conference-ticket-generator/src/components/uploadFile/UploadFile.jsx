@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import { CloudUploadOutlined, InfoCircleOutlined } from "@ant-design/icons";
+import { useMediaQuery } from "react-responsive";
 import { Button, message, Upload } from "antd";
 
 const { Dragger } = Upload;
 
 function UploadFile() {
   const [file, setFile] = useState(null);
+
+  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   // Cargar imagen desde localStorage al iniciar
   useEffect(() => {
@@ -56,7 +59,7 @@ function UploadFile() {
 
   return (
     <div>
-      <div style={{ width: "550px", padding: "10px" }}>
+      <div style={{ width: isMobile ? "100%" : "550px", padding: "10px" }}>
         {!file ? (
           <>
             <h4 style={{ display: "flex", alignItems: "start" }}>
