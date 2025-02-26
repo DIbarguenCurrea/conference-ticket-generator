@@ -59,7 +59,7 @@ function UploadFile() {
 
   return (
     <div>
-      <div style={{ width: isMobile ? "100%" : "550px", padding: "10px" }}>
+      <div style={{ width: isMobile ? "100vw" : "550px", padding: "10px" }}>
         {!file ? (
           <>
             <h4 style={{ display: "flex", alignItems: "start" }}>
