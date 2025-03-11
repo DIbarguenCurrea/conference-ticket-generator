@@ -14,14 +14,19 @@
 .header {
   display: flex;
   align-items: center;
-  gap: 1em;
+  justify-content: center;
+  position: relative;
+  width: 100%;
   font-size: 20px;
   z-index: 1000;
+}
 
-  h1 {
-    font-weight: 800;
-    z-index: 1000;
-  }
+.header-github {
+  display: flex;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .content {
@@ -113,6 +118,23 @@ p {
 .formDesktop {
   position: relative;
   z-index: 1000;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
 .drag-text {
@@ -247,11 +269,19 @@ p {
     display: flex;
     flex-direction: column;
   }
+
   .header {
-    h1 {
-      font-size: 35px;
-    }
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
   }
+
+  .header-github {
+    position: static;
+    transform: none;
+  }
+
   .content {
     padding-top: 20px;
     padding: 4px;

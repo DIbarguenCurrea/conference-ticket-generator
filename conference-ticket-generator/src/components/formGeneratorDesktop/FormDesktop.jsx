@@ -51,6 +51,7 @@ function FormDesktop() {
         wrapperCol={{
           span: 20,
         }}
+        className="form"
       >
         <Form.Item
           label="Full Name"
@@ -62,7 +63,7 @@ function FormDesktop() {
           ]}
         >
           <Input
-            style={{ width: "550px" }}
+            className="form-input"
             value={fullName}
             onChange={(e) => dispatch(setFullName(e.target.value))}
             placeholder="John Doe"
@@ -78,7 +79,7 @@ function FormDesktop() {
           ]}
         >
           <Input
-            style={{ width: "550px" }}
+            className="form-input"
             value={email}
             onChange={(e) => dispatch(setEmail(e.target.value))}
             placeholder="email@example.com"
@@ -110,7 +111,7 @@ function FormDesktop() {
         type="primary"
         style={{
           marginTop: "20px",
-          width: "100%",
+          // width: "30vw",
         }}
         onClick={handleGenerateTicket}
       >

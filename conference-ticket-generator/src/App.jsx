@@ -6,6 +6,7 @@ import PatternCircle2 from "../assets/images/pattern-circle.svg";
 import PatternLines from "../assets/images/pattern-lines.svg";
 import PatternSquigglyLineTop from "../assets/images/pattern-squiggly-line-top.svg";
 import PatternSquigglyLineBottom from "../assets/images/pattern-squiggly-line-bottom-desktop.svg";
+import { GithubOutlined } from "@ant-design/icons";
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
         <div className="header">
           <img src={LogoMark} />
           <h1>Ticket Generator</h1>
+          <div className="header-github">
+            <GithubOutlined />
+          </div>
         </div>
         <div className="content">
           <h2>
@@ -21,9 +25,9 @@ function App() {
           </h2>
           <p>Choose the type of ticket and fill out the form to generate it.</p>
         </div>
-        <div>
-          <FormDesktop />
-        </div>
+
+        <FormDesktop />
+
         <img src={PatternCircle1} className="svg-circle1" />
         <img src={PatternCircle2} className="svg-circle2" />
         <img src={PatternLines} className="svg-lines" />
