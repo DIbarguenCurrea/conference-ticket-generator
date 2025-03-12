@@ -16,7 +16,14 @@ function App() {
           <img src={LogoMark} />
           <h1>Ticket Generator</h1>
           <div className="header-github">
-            <GithubOutlined />
+            <a
+              href="https://github.com/DIbarguenCurrea/conference-ticket-generator/tree/main/conference-ticket-generator"
+              className="github-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GithubOutlined />
+            </a>
           </div>
         </div>
         <div className="content">

@@ -28,11 +28,11 @@ function UploadFile() {
         const imageUrl = reader.result;
         setFile(imageUrl);
         localStorage.setItem("uploadedImage", imageUrl); // Guarda la imagen en el localStorage
-        message.success("Guardado correctamente.");
+        message.success("Saved successfully.");
       };
       reader.readAsDataURL(originFileObj);
     } else if (status === "error") {
-      message.error("Error al cargar la imagen.");
+      message.error("Error loading image.");
     }
   };
 
@@ -49,7 +49,7 @@ function UploadFile() {
     beforeUpload: (file) => {
       const isImage = file.type.startsWith("image/");
       if (!isImage) {
-        message.error("Solo puedes subir archivos de imagen!");
+        message.error("You can only upload image files!");
         return Upload.LIST_IGNORE;
       }
       return true;

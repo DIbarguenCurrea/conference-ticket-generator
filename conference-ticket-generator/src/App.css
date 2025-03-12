@@ -1,5 +1,5 @@
 #root {
-  max-width: 1440px;
+  max-width: 1559px;
   margin: 0 auto;
   text-align: center;
 }
@@ -27,6 +27,19 @@
   right: 20px;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.github-link {
+  text-decoration: none; /* Quita el subrayado */
+  color: inherit; /* Usa el color del padre */
+  outline: none; /* Evita el borde al hacer focus */
+}
+
+.github-link:focus,
+.github-link:active,
+.github-link:visited {
+  text-decoration: none;
+  color: inherit;
 }
 
 .content {
