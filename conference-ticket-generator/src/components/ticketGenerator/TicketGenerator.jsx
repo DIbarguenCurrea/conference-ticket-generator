@@ -9,12 +9,12 @@ function TicketGenerator() {
 
   return (
     <>
-      <div className="main" style={{}}>
-        <div className="header">
+      <div className="ticket-main" style={{}}>
+        <div className="ticket-header">
           <img src={LogoMark} />
           <h1>Ticket Generator</h1>
         </div>
-        <div className="content-form">
+        <div className="ticket-form">
           <h2>
             Congrats, <span className="gradient-text">{fullName}</span>! <br />{" "}
             Your ticket is ready.

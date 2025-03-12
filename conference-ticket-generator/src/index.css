@@ -20,6 +20,6 @@ body {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: white;
+    color: white !important;
   }
 }
