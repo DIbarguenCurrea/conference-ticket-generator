@@ -10,16 +10,24 @@
   background-repeat: no-repeat;
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    /* color: white !important; */
+    --text-color: white;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: white;
+  }
+}
+
 body {
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 375px;
   min-height: 100vh;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: white !important;
-  }
+  color: var(--text-color);
 }
