@@ -13,7 +13,7 @@ function App() {
     <>
       <div className="main">
         <div className="header">
-          <img src={LogoMark} />
+          <img src={LogoMark} className="header-logo" />
           <h1>Ticket Generator</h1>
           <div className="header-github">
             <a

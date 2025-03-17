@@ -49,7 +49,7 @@ function FormDesktop() {
           span: 4,
         }}
         wrapperCol={{
-          span: 20,
+          span: 26,
         }}
         className="form"
       >
@@ -90,10 +90,13 @@ function FormDesktop() {
             display: "flex",
             alignItems: "center",
             justifyContent: "start",
-            gap: "10px",
+            gap: "5px",
           }}
         >
-          <p style={{ color: "white", fontWeight: "600" }}>
+          <p
+            style={{ color: "white", fontWeight: "600" }}
+            className="form-label"
+          >
             Choose type ticket:
           </p>
           {["Conference", "Concert", "Soccer"].map((type) => (
